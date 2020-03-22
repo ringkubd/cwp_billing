@@ -34,6 +34,11 @@ return [
                 'main' => 'Users',
                 'view' => 'View User',
             ],
+            'permission' => [
+                'index' => 'Permission Management',
+                'all' => 'All Permission',
+                'create' => 'Create Permission',
+            ]
         ],
 
         'log-viewer' => [

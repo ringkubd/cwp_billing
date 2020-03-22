@@ -112,6 +112,11 @@ return [
                 'view' => 'View User',
             ],
         ],
+        'permission' => [
+            'title' => [
+                'index' => 'Permission Management',
+            ]
+        ],
         'server' => [
             'table' => [
                 'server_name' => 'Server Name',

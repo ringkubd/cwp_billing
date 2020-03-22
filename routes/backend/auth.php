@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Auth\User\UserPasswordController;
 use App\Http\Controllers\Backend\Auth\User\UserSessionController;
 use App\Http\Controllers\Backend\Auth\User\UserSocialController;
 use App\Http\Controllers\Backend\Auth\User\UserStatusController;
+use App\Http\Controllers\Backend\Auth\Permission\PermissionController;
 
 // All route names are prefixed with 'admin.auth'.
 Route::group([

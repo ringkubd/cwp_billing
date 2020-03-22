@@ -20,7 +20,8 @@ class PermissionController extends Controller
     }
 
     public function index(){
-       return $permission = $this->permissionRepository->get();
+       $permission = $this->permissionRepository->get();
+       return view('backend.auth.permission.index');
     }
 
     public function create(){
