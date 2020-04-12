@@ -162,6 +162,9 @@ return [
                     'first_name' => 'First Name',
                     'last_name' => 'Last Name',
                     'system' => 'System',
+                    'permission_name' => 'Permission Name',
+                    'guard'=>'Guard',
+                    'guard_name'=>'Guard Name',
                 ],
 
                 'roles' => [

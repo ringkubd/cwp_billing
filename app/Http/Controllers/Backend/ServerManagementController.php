@@ -134,4 +134,20 @@ class ServerManagementController extends Controller
         }
         return redirect()->route('admin.server.index')->withFlashSuccess($flashMessage);
     }
+
+    public function testApi(){
+        $data = array("key" => "yLG2ylgDcBO47GciSE5FQHJ09cNH0VBuISO9th3AgfArj","action"=>'list',"user"=>'billing');
+        $url = "https://5.189.130.79:2304/v1/accountdetail";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt ($ch, CURLOPT_POST, 1);
+        $response = curl_exec($ch);
+        dd($ch);
+        curl_close($ch);
+
+    }
 }

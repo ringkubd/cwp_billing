@@ -13,7 +13,7 @@ class PermissionStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return auth()->user()->hasRole(config('access.users.admin_role'));
     }
 
     /**
@@ -24,7 +24,8 @@ class PermissionStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>['required','unique:permissions,name'],
+            'guard_name'=>['required'],
         ];
     }
 }

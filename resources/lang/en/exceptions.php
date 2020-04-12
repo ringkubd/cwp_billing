@@ -49,6 +49,16 @@ return [
                 'update_error' => 'There was a problem updating this user. Please try again.',
                 'update_password_error' => 'There was a problem changing this users password. Please try again.',
             ],
+            'permission' => [
+                'already_exists' => 'That permission already exists. Please choose a different name.',
+                'cant_delete_admin' => 'You can not delete this permission.',
+                'create_error' => 'There was a problem creating this permission. Please try again.',
+                'delete_error' => 'There was a problem deleting this permission. Please try again.',
+                'has_users' => 'You can not delete a permission with associated users.',
+                'needs_permission' => 'You must select at least one permission for this permission.',
+                'not_found' => 'That permission does not exist.',
+                'update_error' => 'There was a problem updating this permission. Please try again.',
+            ]
         ],
     ],
 

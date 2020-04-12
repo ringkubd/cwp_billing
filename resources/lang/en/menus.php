@@ -38,6 +38,7 @@ return [
                 'index' => 'Permission Management',
                 'all' => 'All Permission',
                 'create' => 'Create Permission',
+                'edit' => 'Edit Permission'
             ]
         ],
 

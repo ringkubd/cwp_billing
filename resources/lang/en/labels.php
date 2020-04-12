@@ -115,6 +115,13 @@ return [
         'permission' => [
             'title' => [
                 'index' => 'Permission Management',
+                'create' => 'Create Permission',
+                'add' => 'Add New Permission'
+            ],
+            'table' => [
+                'permission' => 'Permission',
+                'guard' => 'Guard',
+                'action' => 'Action'
             ]
         ],
         'server' => [

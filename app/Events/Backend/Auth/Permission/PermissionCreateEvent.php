@@ -14,14 +14,15 @@ class PermissionCreateEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    private $permission;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($permission)
     {
-        //
+        $this->permission = $permission;
     }
 
     /**
