@@ -46,7 +46,7 @@ class Server
         if (empty($activeServer)){
             session()->flash('errors',__('server.exception.not found'));
         }
-        $this->apiBaseUrl = 'https://'.$activeServer->host_name.':2304/'.$apiVersion;
+        $this->apiBaseUrl = 'https://'.$activeServer->first()->host_name.':2304/'.$apiVersion;
         return $this;
     }
 
