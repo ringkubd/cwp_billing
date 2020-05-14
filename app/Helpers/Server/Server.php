@@ -28,16 +28,16 @@ class Server
         }
         $formParam['key'] = $activeServer->first()->api_key;
         $client = new \GuzzleHttp\Client();
-        $promise = $client->requestAsync('POST', $url, [
+        $response = $client->request('POST', $url, [
             'form_params' => $formParam
         ]);
-        $promise->then(function (ResponseInterface $response){
-            return $response->getBody();
-        }, function (RequestException $exception){
-            session()->flash('errors',__("server.exception.{$exception->getCode()}"));
-            return $exception->getCode();
-        });
-        return  $promise;
+//        $promise->then(function (ResponseInterface $response){
+//            return $response->getBody();
+//        }, function (RequestException $exception){
+//            session()->flash('errors',__("server.exception.{$exception->getCode()}"));
+//            return $exception->getCode();
+//        });
+        return  $response->getBody();
     }
 
     public function buildUrl($base, $apiVersion = "v1"){
