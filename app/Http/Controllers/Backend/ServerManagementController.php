@@ -138,7 +138,7 @@ class ServerManagementController extends Controller
     public function testApi(){
         $server = new Server();
         //dd($server->activeServer());
-        dd($server->postRequest('http://5.189.130.79:2304/v1/account', [
+        dd($server->postRequest('https://host.southzones.com:2304/v1/account', [
             'action' =>'add',
             'domain'=>'testing.southzones.com',
             'user'=>'abdbdd',
