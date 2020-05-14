@@ -29,16 +29,22 @@ class Server
         }
         $formParam['key'] = $activeServer->first()->api_key;
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', $this->apiBaseUrl, [
-            'form_params' => $formParam
-        ]);
+        try {
+            $response = $client->request('POST', $this->apiBaseUrl, [
+                'form_params' => $formParam
+            ]);
+            return  $response->getBody();
+        }catch (RequestException $exception){
+            return $exception->getMessage();
+        }
+
 //        $promise->then(function (ResponseInterface $response){
 //            return $response->getBody();
 //        }, function (RequestException $exception){
 //            session()->flash('errors',__("server.exception.{$exception->getCode()}"));
 //            return $exception->getCode();
 //        });
-        return  $response->getBody();
+
     }
 
     public function buildUrl($base, $apiVersion = "v1"){
