@@ -4,26 +4,27 @@
 namespace App\Http\Controllers\Backend\Servers\Subs;
 
 
-interface Ftp
+interface AutoSsl
 {
     /**
      * @return mixed
      */
-    public function ftpAdd();
+    public function autoSslAdd();
 
     /**
      * @return mixed
      */
-    public function ftpUpdate();
+    public function autoSslDelete();
 
     /**
      * @return mixed
      */
-    public function ftpDelete();
+
+    public function autoSslList();
 
     /**
      * @return mixed
      */
-    public function ftpList();
 
+    public function autoSslRenew();
 }

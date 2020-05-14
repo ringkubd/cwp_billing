@@ -136,18 +136,24 @@ class ServerManagementController extends Controller
     }
 
     public function testApi(){
-        $data = array("key" => "yLG2ylgDcBO47GciSE5FQHJ09cNH0VBuISO9th3AgfArj","action"=>'list',"user"=>'billing');
-        $url = "https://5.189.130.79:2304/v1/accountdetail";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt ($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt ($ch, CURLOPT_POST, 1);
-        $response = curl_exec($ch);
-        dd($ch);
-        curl_close($ch);
-
+        $server = new Server();
+        //dd($server->activeServer());
+        dd($server->postRequest('https://5.189.130.79:2304/v1/account', [
+            'action' =>'add',
+            'domain'=>'testing.southzones.com',
+            'user'=>'abdbdd',
+            'pass'=>'ashfhfh',
+            'email'=>'info@southzones.com',
+            'package'=>'1',
+            'inode'=>'40',
+            'limit_nproc'=>'',
+            'limit_nofile'=>'',
+            'server_ips'=>'5.189.130.79',
+            'autossl'=>1,
+            'encodepass'=>'',
+            'reseller'=>'',
+            'lang'=>'',
+            'debug'=>'0',
+        ]));
     }
 }

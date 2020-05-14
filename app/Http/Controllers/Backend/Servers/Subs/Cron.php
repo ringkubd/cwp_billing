@@ -4,26 +4,20 @@
 namespace App\Http\Controllers\Backend\Servers\Subs;
 
 
-interface Ftp
+interface Cron
 {
     /**
      * @return mixed
      */
-    public function ftpAdd();
+    public function cronAdd();
 
     /**
      * @return mixed
      */
-    public function ftpUpdate();
+    public function cronDelete();
 
     /**
      * @return mixed
      */
-    public function ftpDelete();
-
-    /**
-     * @return mixed
-     */
-    public function ftpList();
-
+    public function cronList();
 }

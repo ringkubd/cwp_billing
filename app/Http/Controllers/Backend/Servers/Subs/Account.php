@@ -39,4 +39,28 @@ interface Account
      */
 
     public function accountUnSuspend();
+
+    /**
+     * @return mixed
+     */
+    public function accountDetail();
+
+    /**
+     * @return mixed
+     */
+    public function accountChangePassword();
+
+    /**
+     * @return mixed
+     */
+    public function accountQuota();
+
+    /**
+     * @return mixed
+     */
+    public function accountAutoLogin();
+
+
+
+
 }
