@@ -144,7 +144,7 @@ class ServerManagementController extends Controller
             'user'=>'abdbdd',
             'pass'=>'ashfhfh',
             'email'=>'info@southzones.com',
-            'package'=>'1',
+            'package'=>'Ecommerce',
             'inode'=>'40',
             'limit_nproc'=>'',
             'limit_nofile'=>'',
