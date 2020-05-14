@@ -11,6 +11,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Server
 {
+    protected $apiBaseUrl;
     /**
      * @param bool $enable
      * @return mixed
@@ -20,7 +21,7 @@ class Server
         return redisSetGetCollection('active_server', ServerInformation::enable($enable)->get());
     }
 
-    public function postRequest(string $url, array  $formParam = []){
+    public function postRequest(array  $formParam = []){
         $activeServer = $this->activeServer(true);
         if (empty($activeServer)){
             session()->flash('errors',__('server.exception.not found'));
@@ -28,7 +29,7 @@ class Server
         }
         $formParam['key'] = $activeServer->first()->api_key;
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', $url, [
+        $response = $client->request('POST', $this->apiBaseUrl, [
             'form_params' => $formParam
         ]);
 //        $promise->then(function (ResponseInterface $response){
@@ -44,9 +45,9 @@ class Server
         $activeServer = $this->activeServer(true);
         if (empty($activeServer)){
             session()->flash('errors',__('server.exception.not found'));
-            return $activeServer;
         }
-        return $baseurl = $activeServer->server_ip.'/'.$apiVersion;
+        $this->apiBaseUrl = 'https://'.$activeServer->host_name.':2304/'.$apiVersion;
+        return $this;
     }
 
 }
